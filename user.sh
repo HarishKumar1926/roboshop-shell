@@ -43,7 +43,7 @@ useradd roboshop &>>$LOGFILE
 #write a condition to check directory already exist or not
 mkdir /app &>>$LOGFILE
 
-curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>>$LOGFILE
+curl -o /tmp/user.ziphttps://roboshop-artifacts.s3.amazonaws.com/user.zip &>>$LOGFILE
 
 VALIDATE $? "downloading user artifact"
 
@@ -84,6 +84,6 @@ yum install mongodb-org-shell -y &>>$LOGFILE
 
 VALIDATE $? "Installing mongo client"
 
-mongo --host mongodb.joindevops.online </app/schema/user.js &>>$LOGFILE
+mongo --host mongodb.techspotlight.online </app/schema/user.js &>>$LOGFILE
 
 VALIDATE $? "loading user data into mongodb"

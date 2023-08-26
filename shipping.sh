@@ -35,7 +35,7 @@ useradd roboshop &>>$LOGFILE
 
 mkdir /app &>>$LOGFILE
 
-curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip &>>$LOGFILE
+curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip &>>$LOGFILE
 
 VALIDATE $? "Downloading shipping artifact"
 
@@ -76,7 +76,7 @@ yum install mysql -y  &>>$LOGFILE
 
 VALIDATE $? "Installing MySQL client"
 
-mysql -h mysql.joindevops.online -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$LOGFILE
+mysql -h mysql.techspotlight.online -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$LOGFILE
 
 VALIDATE $? "Loaded countries and cities info"
 
